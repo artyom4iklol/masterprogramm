@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+_build/
+.DS_Store
+literature/pdfs/*
+!literature/pdfs/.gitkeep
+data/raw/*
+!data/raw/.gitkeep
+submissions/*.zip
+reports/environment-lock.txt

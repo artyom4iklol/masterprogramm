@@ -1,0 +1,28 @@
+format: jb-book
+root: course/index
+chapters:
+  - file: docs/SETUP_MAC
+  - file: course/week01
+    sections:
+      - file: assignments/week01/W01_KKT
+      - file: assignments/week01/W02_DUALITY
+      - file: assignments/week01/W03_FIRM
+      - file: assignments/week01/W04_MACRO
+      - file: assignments/week01/W05_OLS
+      - file: assignments/week01/W06_FINANCE
+      - file: assignments/week01/W07_GAR
+      - file: assignments/week01/W08_IR
+      - file: assignments/week01/W09_ENGLISH
+  - file: notebooks/00_environment
+    sections:
+      - file: notebooks/01_choice_and_duality
+      - file: notebooks/02_ols_projection
+      - file: notebooks/03_capital_budgeting
+      - file: notebooks/04_gar_data
+  - file: docs/WORKFLOW
+  - file: docs/DATA_IMPORT
+  - file: docs/GITHUB
+  - file: docs/ZOTERO
+  - file: literature/SOURCES
+  - file: course/roadmap
+  - file: docs/VERIFICATION

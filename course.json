@@ -1,0 +1,93 @@
+{
+  "course": "masters-2027",
+  "version": 1,
+  "week": "week01",
+  "hours": 48,
+  "pass_score": 80,
+  "assignments": [
+    {
+      "id": "W01",
+      "title": "KKT: угловые решения и насыщение",
+      "hours": 5,
+      "file": "assignments/week01/W01_KKT.md",
+      "code_checks": [
+        "consumer"
+      ],
+      "oral": true
+    },
+    {
+      "id": "W02",
+      "title": "Двойственность и уравнение Слуцкого",
+      "hours": 7,
+      "file": "assignments/week01/W02_DUALITY.md",
+      "code_checks": [
+        "duality"
+      ],
+      "oral": true
+    },
+    {
+      "id": "W03",
+      "title": "Условный спрос фирмы и выбор выпуска",
+      "hours": 6,
+      "file": "assignments/week01/W03_FIRM.md",
+      "code_checks": [
+        "firm"
+      ],
+      "oral": true
+    },
+    {
+      "id": "W04",
+      "title": "Межвременной выбор и кредитное ограничение",
+      "hours": 6,
+      "file": "assignments/week01/W04_MACRO.md",
+      "code_checks": [],
+      "oral": true
+    },
+    {
+      "id": "W05",
+      "title": "Матричный OLS и проекция",
+      "hours": 8,
+      "file": "assignments/week01/W05_OLS.md",
+      "code_checks": [
+        "ols"
+      ],
+      "oral": true
+    },
+    {
+      "id": "W06",
+      "title": "FCFF: налоги, капитал и оборотные средства",
+      "hours": 8,
+      "file": "assignments/week01/W06_FINANCE.md",
+      "code_checks": [
+        "finance"
+      ],
+      "oral": true
+    },
+    {
+      "id": "W07",
+      "title": "GaR: информация, горизонт и паспорт данных",
+      "hours": 4,
+      "file": "assignments/week01/W07_GAR.md",
+      "code_checks": [
+        "growth"
+      ],
+      "oral": true
+    },
+    {
+      "id": "W08",
+      "title": "МО: сопоставление причинных механизмов",
+      "hours": 3,
+      "file": "assignments/week01/W08_IR.md",
+      "code_checks": [],
+      "oral": true
+    },
+    {
+      "id": "W09",
+      "title": "Английская защита исследовательского решения",
+      "hours": 1,
+      "file": "assignments/week01/W09_ENGLISH.md",
+      "code_checks": [],
+      "oral": true
+    }
+  ]
+}

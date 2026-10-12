@@ -1,0 +1,14 @@
+title: "Masters 2027 — экономическая теория и исследование"
+author: "Учебный проект Артёма"
+only_build_toc_files: true
+execute:
+  execute_notebooks: "off"
+repository:
+  url: https://github.com/artyom4iklol/masterprogramm
+  branch: main
+html:
+  use_repository_button: true
+sphinx:
+  config:
+    html_show_copyright: false
+    suppress_warnings: ["myst.xref_missing", "myst.header"]
