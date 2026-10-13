@@ -89,5 +89,7 @@
       "code_checks": [],
       "oral": true
     }
-  ]
+  ],
+  "scope": "initial_assignment_bank",
+  "hours_note": "48 — исходные оценки банка задач после изучения теории; не недельный бюджет. Новая программа: course/LEARNING_SYSTEM.md."
 }

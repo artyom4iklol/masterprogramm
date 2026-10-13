@@ -7,7 +7,10 @@ import numpy as np
 import pandas as pd
 
 def consumer_quadratic(m):
-    """Конечное m>=0; вернуть dict(x=..., y=..., shadow=...)."""
+    """Конечное m>=0; dict(x=..., y=..., shadow=...).
+    shadow — производная оптимального значения; при m=0 правая производная.
+    В вырожденной границе множество множителей KKT исследуется письменно.
+    """
     raise NotImplementedError('W01: выведи и реализуй все режимы KKT')
 
 def marshallian(alpha, px, py, income):

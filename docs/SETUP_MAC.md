@@ -51,8 +51,7 @@ https://docs.python.org/3.12/tutorial/venv.html
 
 ## 5. Начать содержание
 
-Прочитай `course/week01.md` и `assignments/week01/W01_KKT.md`.
-Запиши вывод в `work/week01/W01.md`, реализуй `consumer_quadratic` в answers.py.
+Прочитай `course/LEARNING_SYSTEM.md` и `course/roadmap.md`. Старые W01–W09 — банк задач разных этапов. Когда W01 назначена после изучения оптимизации, запиши вывод в `work/week01/W01.md` и реализуй `consumer_quadratic` в answers.py.
 Открой `notebooks/01_choice_and_duality.ipynb`; запускай блоки после реализации.
 При изменении answers.py повторно выполни ячейку `a = load_answers()`.
 

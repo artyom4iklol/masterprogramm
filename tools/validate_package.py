@@ -27,4 +27,4 @@ for path in re.findall(r'(?:file|root): (.+)',text):
     assert any((ROOT/(path.strip()+ext)).is_file() for ext in ['.md','.ipynb']),path
 for path in ['README.md','START_HERE.html','requirements.txt','_config.yml','docs/WORKFLOW.md','docs/VERIFICATION.md','literature/references.bib']:
     assert (ROOT/path).is_file(),path
-print('Infrastructure integrity passed: 9 assignments, 5 notebooks, 48 planned hours.')
+print('Infrastructure integrity passed: initial bank of 9 assignments and 5 notebooks; 48 legacy task-hours, not a weekly schedule.')

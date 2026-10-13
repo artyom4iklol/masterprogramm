@@ -1,6 +1,9 @@
 format: jb-book
 root: course/index
 chapters:
+  - file: course/LEARNING_SYSTEM
+  - file: literature/CORE_SOURCES
+  - file: docs/UNIT_STANDARD
   - file: docs/SETUP_MAC
   - file: course/week01
     sections:
