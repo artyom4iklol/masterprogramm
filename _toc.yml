@@ -1,6 +1,23 @@
 format: jb-book
 root: course/index
 chapters:
+  - file: weeks/week01/README
+    sections:
+      - file: weeks/week01/01_existence
+      - file: weeks/week01/02_concavity
+      - file: weeks/week01/03_consumer
+      - file: weeks/week01/04_kkt
+      - file: weeks/week01/08_problems
+      - file: weeks/week01/lab
+      - file: weeks/week01/05_ir
+      - file: weeks/week01/06_english
+      - file: weeks/week01/07_research
+      - file: weeks/week01/09_assessment
+      - file: weeks/week01/10_solutions
+      - file: weeks/week01/11_assessment_keys
+      - file: weeks/week01/SOURCES
+      - file: weeks/week01/QA
+      - file: work/first_week/submission
   - file: course/LEARNING_SYSTEM
   - file: literature/CORE_SOURCES
   - file: docs/UNIT_STANDARD
