@@ -51,9 +51,11 @@ https://docs.python.org/3.12/tutorial/venv.html
 
 ## 5. Начать содержание
 
-Для занятий открой `weeks/week01/README.md` и начни урок A. Общая структура — `course/LEARNING_SYSTEM.md` и `course/roadmap.md`. Старые W01–W09 — банк задач разных этапов. Когда W01 назначена после изучения оптимизации, запиши вывод в `work/week01/W01.md` и реализуй `consumer_quadratic` в answers.py.
-Открой `notebooks/01_choice_and_duality.ipynb`; запускай блоки после реализации.
-При изменении answers.py повторно выполни ячейку `a = load_answers()`.
+Открой `weeks/week01/README.md`, затем `weeks/week01/00_tools.md`: P1–P3 перед A, P4–P6 перед B. Решения и фактическое время сохраняй в `work/first_week/submission.md` или рядом с ним. Подробный цикл чтения, решения и сдачи — [HOW_TO_STUDY.md](HOW_TO_STUDY.md).
+
+Для лабораторной после письменного D5 скопируй `weeks/week01/lab.ipynb` в `work/first_week/lab.ipynb`, открой копию и выбери Masters2027. Реализуй `consumer` внутри этой копии; готовые сетка и графики запускаются через Run All. CSV появится в `work/first_week/lab_results.csv`. Незаполненная функция даёт PENDING, не зачёт.
+
+Старые `answers.py`, `notebooks/01_choice_and_duality.ipynb` и W01–W09 относятся к сохранённому банку, а не к обязательной первой неделе 1.1. `course.py status`/`selfcheck` не отслеживают P1–D6. Чтение и бумажные решения можно начать до установки Python.
 
 ## 6. Ошибки запуска
 
