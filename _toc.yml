@@ -3,6 +3,7 @@ root: course/index
 chapters:
   - file: weeks/week01/README
     sections:
+      - file: weeks/week01/00_tools
       - file: weeks/week01/01_existence
       - file: weeks/week01/02_concavity
       - file: weeks/week01/03_consumer
@@ -15,6 +16,9 @@ chapters:
       - file: weeks/week01/09_assessment
       - file: weeks/week01/10_solutions
       - file: weeks/week01/11_assessment_keys
+      - file: weeks/week01/12_tools_keys
+      - file: weeks/week01/13_extensions
+      - file: weeks/week01/CHANGES
       - file: weeks/week01/SOURCES
       - file: weeks/week01/QA
       - file: work/first_week/submission

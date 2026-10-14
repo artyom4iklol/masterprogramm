@@ -110,7 +110,75 @@ assert len(ids)==24 and len(set(ids))==24
 for name in ids:assert re.search(r'^## '+name+r'$',solutions,re.M),name
 for name in ['EX1','EX2','EX3','EX4','R0','R7a','R7b','R28a','R28b']:
     assert re.search(r'^## '+name+r'$',(W/'11_assessment_keys.md').read_text(),re.M),name
-assert sum([5,5,6,6,4,3,3,4])==36
+# Read the delivered schedule, not a separate hardcoded total.
+schedule=(W/'README.md').read_text()
+hours={}
+for line in schedule.splitlines():
+    cells=[x.strip() for x in line.split('|')[1:-1]]
+    if len(cells)==4 and cells[0] in ['P','A','B','C','D','IR','EN','R','EX']:
+        hours[cells[0]]=int(cells[2])
+assert hours==dict(P=2,A=4,B=5,C=6,D=5,IR=4,EN=3,R=3,EX=4)
+assert sum(hours.values())==36
+for block,expected in [('A',120),('B',150),('C',180),('D',120)]:
+    minutes=re.findall(r'\*\*'+block+r'[1-6]\.[^\n]*?\((\d+) минут',problems)
+    assert len(minutes)==6 and sum(map(int,minutes))==expected,(block,minutes)
+for num in range(1,7):
+    assert re.search(r'^## P'+str(num)+r'$',(W/'12_tools_keys.md').read_text(),re.M)
+assert sum(map(int,re.findall(r'\*\*P[1-6] \((\d+) минут',(W/'00_tools.md').read_text())))==55
+checks['schedule_and_exercise_minutes']='36 base hours; 0–4 optional reserve; 55+120+150+180+120 exercise minutes'
+
+# C1: compare the piecewise formula with search over original feasible leisure choices.
+cases=0
+for T in [1.,8.]:
+ for w in [2.,10.]:
+  for p in [.5,2.]:
+   for ratio in [0.,.25,.999,1.,1.001,2.]:
+    Y=ratio*w*T
+    leisure=min(T,(w*T+Y)/(2*w));cons=(w*(T-leisure)+Y)/p
+    assert leisure>0 and leisure<=T and cons>0
+    grid=np.linspace(0,T,20001)[1:]
+    available=w*(T-grid)+Y;grid=grid[available>0];available=available[available>0]
+    values=np.log(available/p)+np.log(grid)
+    value=math.log(cons)+math.log(leisure)
+    assert value>=values.max()-1e-10 and value-values.max()<1e-4
+    cases+=1
+checks['C1_original_budget_grid_cases']=cases
+assert np.allclose([min(8,(80+0)/20),(80+0)/(2*2)],[4,20])
+assert min(8,(80+100)/20)==8 and 100/2==50
+
+# D3: independent feasible-region search; marginal value compared with finite differences.
+xx=np.linspace(0,5,1001)[:,None]
+yy=(10-2*xx)*np.linspace(0,1,1001)[None,:]
+scores=5*xx+4*yy-(xx*xx+yy*yy)/2
+assert abs(scores.max()-18.9)<1e-8
+assert math.isclose(2*(17/5)+(16/5),10)
+def production_value(cap):
+ a=np.array([5.,4.]);price=np.array([2.,1.])
+ if price@a<=cap:z=a
+ else:
+  lo,hi=0.,10.
+  for _ in range(90):
+   mid=(lo+hi)/2;z=np.maximum(a-mid*price,0)
+   if price@z>cap:lo=mid
+   else:hi=mid
+  z=np.maximum(a-hi*price,0)
+ return a@z-.5*z@z
+assert abs((production_value(10.00001)-production_value(10))/.00001-.8)<1e-4
+assert abs(production_value(15)-production_value(10)-1.6)<1e-9
+checks['D3_grid_points_and_resource_derivative']=1002001
+
+# P: independent polynomial substitution and linear solve checks.
+assert np.allclose(np.linalg.solve([[3,1],[1,2]],[7,4]),[2,1])
+for x in np.linspace(-2,3,11):
+ y=5-x
+ assert math.isclose(x*x+3*x*y-2*y*y,-4*x*x+35*x-50,abs_tol=1e-10)
+ assert math.isclose((2*x+3*y)-(3*x-4*y),-8*x+35,abs_tol=1e-10)
+H=np.array([[-2,3],[3,-2]])
+assert np.array([1,1])@H@np.array([1,1])==2
+assert np.array([1,-1])@H@np.array([1,-1])==-10
+assert math.isclose((20*3.5-3.5**2)-(20*3-3**2),6.75)
+checks['P_keys']='substitution, matrix solve, quadratic directions and finite change checked'
+checks['tools_exercise_keys']=6
 nb=json.loads((W/'lab.ipynb').read_text())
 assert nb['nbformat']==4 and nb['nbformat_minor']==5
 for cell in nb['cells']:
